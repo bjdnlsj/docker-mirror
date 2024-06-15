@@ -4,27 +4,28 @@ on:
   workflow_dispatch:
     inputs:
       IMAGE_NAME:
-        description: '原镜像名称'
+        description: 'seataio/seata-server'
         required: true
         default: 'mysql/mysql-server'
       NEW_NAME:
-        description: '同步后镜像名称'
+        description: 'seata-server'
         required: true
         default: 'mysql-server'
       IMAGE_VERSION:
-        description: '镜像版本'
+        description: '2.0.0'
         required: true
         default: 'latest'
       TARGET_REGISTRY:
-        description: '仓库地址'
+        description: 'registry.cn-hangzhou.aliyuncs.com'
         required: true
         default: 'registry.cn-hangzhou.aliyuncs.com'
       TARGET_REPOSITORY:
-        description: '空间名称'
+        description: 'bjdnlsj_dockerhub'
         required: true
         default: 'dockerhub_mirror'
       TARGET_ARCH:
-        description: '平台 amd64(默认)、arm64、arm/v7'
+        # 平台 amd64(默认)、arm64、arm/v7
+        description: 'amd64'
         required: false
 jobs:
   build:
